@@ -29,6 +29,9 @@ OR
 
 C:\rmi_demo\client>java RMI_BioAPI_Demo demo16.txt 1688  localhost my_transact demo.txt
 
+
+cd C:\Users\SeanCui\Documents\Programming\Projects\RMI\RMI-Project\server
+
 Server:
 javac RMI_BioAPI_AsteriskJava_Server.java
 javac RMI_BioAPI_AsteriskJava_Interface.java
@@ -36,8 +39,10 @@ rmic RMI_BioAPI_AsteriskJava_Server
 start rmiregistry
 java RMI_BioAPI_AsteriskJava_Server 2099
 
+
+cd C:\Users\SeanCui\Documents\Programming\Projects\RMI\RMI-Project\client
 Client:
 javac RMI_BioAPI_AsteriskJava_Client.java
 javac RMI_BioAPI_AsteriskJava_Interface.java
 javac RMI_BioAPI_Demo.java
-java -Djava.security.policy=java_grant_all_policy.txt RMI_BioAPI_Demo demo16.txt 1688  72.229.179.55 my_transact demo.txt
+java -Djava.security.policy=java_grant_all_policy.txt RMI_BioAPI_Demo demo16.txt 1688  localhost my_transact demo.txt
