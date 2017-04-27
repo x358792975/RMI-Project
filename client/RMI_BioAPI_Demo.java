@@ -21,7 +21,7 @@ public class RMI_BioAPI_Demo {
 
 	private static String local_Filename = null;
 
-	private String socket_listener_ip = "192.168.67.1";
+	private String socket_listener_ip = "localhost";
 	//private String socket_listener_ip = "10.255.149.57";
 	// socket_listener_ip of socket server at DSP machine
 	//// private String socket_listener_ip = "<whatever IP it should be>";
