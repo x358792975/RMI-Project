@@ -6,12 +6,13 @@ C:\rmi_demo\server>rmic RMI_BioAPI_AsteriskJava_Server
 Server side:
 ------------
 For windows (by default it runs rmiregistry at 1099, so pick any other port like 2099 for RMI server service):
+
 C:\rmi_demo\server>start rmiregistry
 
 For Linux/Unix variant:
 rmiregistry &
 
-C:\rmi_demo\server>java java RMI_BioAPI_AsteriskJava_Server 2099
+C:\rmi_demo\server>java RMI_BioAPI_AsteriskJava_Server 2099
 
 Client side:
 ------------
@@ -27,3 +28,16 @@ C:\rmi_demo\client>java -Djava.security.policy=java_grant_all_policy.txt RMI_Bio
 OR
 
 C:\rmi_demo\client>java RMI_BioAPI_Demo demo16.txt 1688  localhost my_transact demo.txt
+
+Server:
+javac RMI_BioAPI_AsteriskJava_Server.java
+javac RMI_BioAPI_AsteriskJava_Interface.java
+rmic RMI_BioAPI_AsteriskJava_Server
+start rmiregistry
+java RMI_BioAPI_AsteriskJava_Server 2099
+
+Client:
+javac RMI_BioAPI_AsteriskJava_Client.java
+javac RMI_BioAPI_AsteriskJava_Interface.java
+javac RMI_BioAPI_Demo.java
+java -Djava.security.policy=java_grant_all_policy.txt RMI_BioAPI_Demo demo16.txt 1688  72.229.179.55 my_transact demo.txt
